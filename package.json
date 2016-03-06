@@ -1,0 +1,28 @@
+{
+  "name": "postcss-workshop",
+  "version": "1.0.0",
+  "description": "A workshop for building a postcss plugin.",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run debug & npm run dev-server",
+    "build": "gulp",
+    "dev-server": "browser-sync start --server 'test' --files 'test/index.html, test/build/*.css' --no-open",
+    "debug": "devtool --watch index.js node_modules/gulp/bin/gulp.js -c -- default",
+    "test": ""
+  },
+  "dependencies": {
+    "postcss": "5.0.16",
+    "random-js": "1.0.8"
+  },
+  "author": "Jeff <jeff@jeffjewiss.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "2.11.1",
+    "devtool": "1.8.2",
+    "gulp": "3.9.1",
+    "gulp-plumber": "1.1.0",
+    "gulp-postcss": "6.1.0",
+    "gulp-util": "3.0.7",
+    "postcss-discard-comments": "2.0.4"
+  }
+}

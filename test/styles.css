@@ -1,0 +1,12 @@
+.example {
+  float: left;
+  width: 20%;
+  min-height: 10rem;
+  font-family: "Arial";
+}
+
+@randomize example 1-25 {
+  @rand-props background-color cyan,yellow,grey;
+  @rand-props font-size 12px,16px,24px,32px;
+  @rand-props font-family "Arial","Helvetica","Courier",monospace
+}
