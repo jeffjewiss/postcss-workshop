@@ -1,12 +1,90 @@
-.example {
-  float: left;
-  width: 20%;
-  min-height: 10rem;
-  font-family: "Arial";
+body {
+  color: #333333;
+  background-color: #efefef;
+  font-family: "Helvetica", "Arial", sans-serif;
+  margin: 0;
+  padding: 1rem 0 4rem 0;
 }
 
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.title {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2rem;
+  line-height: 1.5;
+}
+
+.sub-title {
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.main {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3rem 2rem;
+}
+
+.main > .container {
+  background-color: white;
+  box-shadow: 0 5px 15px rgba(0,0,0,.2);
+}
+
+.container {
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.example {
+  width: 20%;
+  text-align: center;
+  box-sizing: inherit;
+}
+
+.example > .container {
+  min-height: 8rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @randomize example 1-25 {
-  @rand-props background-color cyan,yellow,grey;
-  @rand-props font-size 12px,16px,24px,32px;
-  @rand-props font-family "Arial","Helvetica","Courier",monospace;
+  font-weight: bold;
+  color: blue;
+
+  @rand-props background-color lightcyan,lightyellow,lightgrey,lightcoral,lightgreen,lightslategrey,lightsalmon;
+  @rand-props font-size 8px,12px,16px,24px;
+  @rand-props font-family "Arial","Helvetica","Courier","Georgia";
+  @rand-props font-weight 300,400,500,600;
+  @rand-props transform rotate(180deg),rotate(360deg),scale(0.75),scale(0.5),scale(0.25);
+  @rand-props text-decoration none,underline,line-through;
+  @rand-props opacity 0.6,0.7,0.8,0.9,1;
 }

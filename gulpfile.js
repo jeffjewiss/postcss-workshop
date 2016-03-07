@@ -15,7 +15,10 @@ gulp.task('build', function () {
     .pipe(plumber({
       errorHandler: onError
     }))
-    .pipe( postcss([ require('postcss-discard-comments'), require('./index.js') ]) )
+    .pipe( postcss([
+      require('postcss-discard-comments'),
+      require('./index.js')
+    ]) )
     .pipe( gulp.dest('test/build') )
 })
 
