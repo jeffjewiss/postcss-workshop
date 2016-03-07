@@ -32,15 +32,18 @@ module.exports = postcss.plugin('postcss-randomize', function (opts) {
 
         randomRules.forEach(function(newNode) {
           newNode.nodes = newNode.nodes.map(function(childNode) {
-            if (isAtRule(childNode) && childNode.name === propsName) {
-              var params = childNode.params.split(' ')
-              var propertyName = params[0]
-              var values = params[1].split(',')
-              return postcss.decl({
-                prop: propertyName,
-                value: randomValue(values)
-              })
+            if (!(isAtRule(childNode) && childNode.name === propsName)) {
+              return childNode;
             }
+
+            var params = childNode.params.split(' ')
+            var propertyName = params[0]
+            var values = params[1].split(',')
+
+            return postcss.decl({
+              prop: propertyName,
+              value: randomValue(values)
+            })
           })
         })
 
